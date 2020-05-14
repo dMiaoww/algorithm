@@ -7,13 +7,14 @@ public class Run {
     public static void main(String[] args) {
         String s = "ADOBECOBAC";
         String t1 = "ABC";
-        String t2 = "abc";
-        String t3 = "AABC";
+        String t2 = "pwwkew";
+        String t3 = "bbbbbbbbb";
 
-        MinimumWindowSubstring solution = new MinimumWindowSubstring();
-        String r1 = solution.method(s,t1);
-        String r2 = solution.method(s,t2);
-        String r3 = solution.method(s,t3);
+        LC3 l = new LC3();
+        int x1 = l.method(s);
+        int x2 = l.method(t1);
+        int x3 = l.method(t2);
+        int x4 = l.method(t3);
 
     }
 }
