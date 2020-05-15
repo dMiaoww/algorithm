@@ -1,3 +1,7 @@
+import hot100.Stack20;
+
+import java.util.Stack;
+
 /**
  * Created by W
  * Date: 2020-05-14 01:31
@@ -5,16 +9,18 @@
  */
 public class Run {
     public static void main(String[] args) {
-        String s = "ADOBECOBAC";
-        String t1 = "ABC";
-        String t2 = "pwwkew";
-        String t3 = "bbbbbbbbb";
+        String s = "(((((";
+        String t1 = "{{{{";
+        String t2 = "[[[[";
+        String t3 = "({[]})";
+        String t4 = "]})";
 
-        LC3 l = new LC3();
-        int x1 = l.method(s);
-        int x2 = l.method(t1);
-        int x3 = l.method(t2);
-        int x4 = l.method(t3);
+        Stack20 stack20 = new Stack20();
+        boolean x1 = stack20.isValid(s);
+        boolean x2 = stack20.isValid(t1);
+        boolean x3 = stack20.isValid(t2);
+        boolean x4 = stack20.isValid(t3);
+        boolean x5 = stack20.isValid(t4);
 
     }
 }
