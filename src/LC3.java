@@ -9,31 +9,28 @@ import java.util.Map;
 public class LC3 {
     public int method(String s) {
         Map<Character, Integer> window = new HashMap<>();
-        int left = 0, right = 0;
+        char[] chars = s.toCharArray();
+        int left = 0;
+        int right = 0;
         int length = 0;
-        while (right < s.length()) {
-            char c = s.charAt(right);
+        int count;
+
+        while(right < chars.length){
+            //窗口扩大
+            char c = chars[right];
             right++;
+            count = window.getOrDefault(c, 0);
+            window.put(c, count + 1);
 
-            //扩大窗口时对窗口数据进行更新
-            window.put(c, window.getOrDefault(c, 0) + 1);
-
-            //缩小窗口
-            while ((right - left) > window.size()) {
-                //更新结果
-                length = Math.max(length,window.size());
-
-                char d = s.charAt(left);
+            while(window.get(c) > 1){
+                //结束条件
+                length = Math.max(right - left - 1, length);
+                //窗口缩小
+                window.put(chars[left], window.get(chars[left])-1);
                 left++;
-
-                //更新窗口数据
-                window.put(d, window.get(d) - 1);
-                if (window.get(d) == 0) {
-                    window.remove(d);
-                }
             }
         }
-
-        return length < window.size() ? window.size() : length;
+        return Math.max(right - left, length);
     }
+
 }

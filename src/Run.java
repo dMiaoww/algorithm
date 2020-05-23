@@ -1,7 +1,8 @@
 import hot100.LC64;
 import hot100.Stack20;
 
-import java.util.Stack;
+import java.lang.reflect.Method;
+import java.util.*;
 
 /**
  * Created by W
@@ -9,10 +10,10 @@ import java.util.Stack;
  * Description
  */
 public class Run {
-    public static void main(String[] args) {
-        int[][] gird = {{1, 3, 1}, {1, 5, 1}, {4, 2, 1}};
-        LC64 solution = new LC64();
-        solution.minPathSum(gird);
+    public static void main(String[] args) throws ClassNotFoundException, NoSuchMethodException {
+        LC3 lc3 = new LC3();
+        System.out.println(lc3.method("sab"));
+
 
     }
 }
